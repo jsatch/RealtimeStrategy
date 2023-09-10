@@ -11,6 +11,8 @@ public class RTSNetworkManager : NetworkManager
     {
         base.OnServerAddPlayer(networkConnection);
 
+        // In the component we defined a series of SpawnPoints, that is why we get
+        // the position and rotation of that transforms.
         GameObject unitSpawnerInstance = Instantiate(
             unitSpawnerPrefab, 
             networkConnection.identity.transform.position, 
